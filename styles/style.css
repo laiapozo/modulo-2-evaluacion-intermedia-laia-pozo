@@ -1,0 +1,46 @@
+.main {
+    padding: 20px 0 0 20px;
+    font-family: sans-serif;
+    color: rgb(75, 75, 75);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.number {
+    padding: 5px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightgrey;
+}
+
+.button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #09d0bc;
+
+    &:hover {
+        opacity: 80%;
+    }
+}
+
+.clue {
+    border: solid 3px lightgrey;
+    padding: 5px 50px 5px 5px;
+}
+
+.attempts {
+    border: solid 3px lightgrey;
+    padding: 5px 182px 5px 5px;
+}
