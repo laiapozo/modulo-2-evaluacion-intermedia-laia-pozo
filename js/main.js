@@ -5,13 +5,13 @@
     - Crear accumulator
     - Generar random number entre 1 y 100 (hacer console.log)
     - Cuando la usuaria haga click en el botón:
-        · Guardar el valor del input number (hacer console.log)
+        · Guardar el valor del input number y convertirlo en number (hacer console.log)
         · Condiciones:
             > Si number user < 1 || number user > 100 --> Pintar en el span clue "El número debe estar entre 1 y 100"
             > Si number user > random number --> Pintar en el span clue "Demasiado alto"
             > Si number user < random number --> Pintar en el span clue "Demasiado bajo"
             > Si number user = random number --> Pintar en el span clue "Has ganado campeona!!!"
-        · Sumar 1 intento al accumulator
+        · Sumar 1 intento al accumulator y pintarlo en el span attempts
 */
 
 const inputUserNumber = document.querySelector('.js-user-number');
