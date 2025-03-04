@@ -40,6 +40,9 @@ const handleClick = (event) => {
     } else if (userNumber < randomNumber) {
         clue.innerHTML = 'Demasiado bajo';
     }
+
+    accumulator++;
+    attempts.innerHTML = accumulator;
 }
 
 pruebaButton.addEventListener("click", handleClick);

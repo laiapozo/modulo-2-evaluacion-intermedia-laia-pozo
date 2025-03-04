@@ -37,10 +37,12 @@
 
 .clue {
     border: solid 3px lightgrey;
-    padding: 5px 50px 5px 5px;
+    padding: 5px;
+    width: 400px;
 }
 
 .attempts {
     border: solid 3px lightgrey;
-    padding: 5px 182px 5px 5px;
+    padding: 5px;
+    width: 400px;
 }
