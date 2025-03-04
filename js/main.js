@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
     - Seleccionar elementos html: input, button, span clue, span attempts
@@ -14,10 +14,10 @@
         · Sumar 1 intento al accumulator y pintarlo en el span attempts
 */
 
-const inputUserNumber = document.querySelector('.js-user-number');
-const pruebaButton = document.querySelector('.js-btn');
-const clue = document.querySelector('.js-clue');
-const attempts = document.querySelector('.js-attempts');
+const inputUserNumber = document.querySelector(".js-user-number");
+const pruebaButton = document.querySelector(".js-btn");
+const clue = document.querySelector(".js-clue");
+const attempts = document.querySelector(".js-attempts");
 
 let accumulator = 0;
 
@@ -25,24 +25,32 @@ const getRandomNumber = (max) => Math.ceil(Math.random() * max);
 const randomNumber = getRandomNumber(100);
 console.log(`Random number: ${randomNumber}`);
 
+const guessNumber = () => {
+  const userNumber = parseInt(inputUserNumber.value);
+  console.log(`User number: ${userNumber}`);
+
+  if (userNumber < 1 || userNumber > 100 || !userNumber) {
+    clue.innerHTML = "El número debe estar entre 1 y 100";
+  } else if (userNumber === randomNumber) {
+    clue.innerHTML = "Has ganado, campeona!!!";
+  } else if (userNumber > randomNumber) {
+    clue.innerHTML = "Demasiado alto";
+  } else if (userNumber < randomNumber) {
+    clue.innerHTML = "Demasiado bajo";
+  }
+};
+
+const updateAccumulator = () => {
+  accumulator++;
+  attempts.innerHTML = accumulator;
+};
+
 const handleClick = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const userNumber = parseInt(inputUserNumber.value);
-    console.log(`User number: ${userNumber}`);
+  guessNumber();
 
-    if (userNumber < 1 || userNumber > 100 || !userNumber) {
-        clue.innerHTML = 'El número debe estar entre 1 y 100';
-    } else if (userNumber === randomNumber) {
-        clue.innerHTML = 'Has ganado, campeona!!!';
-    } else if (userNumber > randomNumber) {
-        clue.innerHTML = 'Demasiado alto';
-    } else if (userNumber < randomNumber) {
-        clue.innerHTML = 'Demasiado bajo';
-    }
-
-    accumulator++;
-    attempts.innerHTML = accumulator;
-}
+  updateAccumulator();
+};
 
 pruebaButton.addEventListener("click", handleClick);
