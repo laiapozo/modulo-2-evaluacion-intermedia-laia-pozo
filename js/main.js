@@ -31,10 +31,10 @@ const handleClick = (event) => {
     const userNumber = parseInt(inputUserNumber.value);
     console.log(`User number: ${userNumber}`);
 
-    if (userNumber < 1 || userNumber > 100) {
+    if (userNumber < 1 || userNumber > 100 || !userNumber) {
         clue.innerHTML = 'El número debe estar entre 1 y 100';
     } else if (userNumber === randomNumber) {
-        clue.innerHTML = 'Has ganado campeona!!!';
+        clue.innerHTML = 'Has ganado, campeona!!!';
     } else if (userNumber > randomNumber) {
         clue.innerHTML = 'Demasiado alto';
     } else if (userNumber < randomNumber) {
